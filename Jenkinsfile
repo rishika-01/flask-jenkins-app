@@ -22,7 +22,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploy stage'
+                sh '''
+                    mkdir -p deploy
+                    cp app.py deploy/
+                    cp requirements.txt deploy/
+                    echo "Deployment successful"
+                    ls -l deploy
+                '''
             }
         }
     }
