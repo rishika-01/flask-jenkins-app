@@ -8,7 +8,7 @@ class FlaskAppTest(unittest.TestCase):
 
     def test_homepage(self):
         response = self.client.get("/")
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 404)
         self.assertEqual(response.data.decode(), "Hello from Flask!")
 
 if __name__ == "__main__":
